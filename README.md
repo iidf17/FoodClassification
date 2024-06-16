@@ -1,4 +1,4 @@
-# Датасет расположен по ссылке: https://www.kaggle.com/datasets/iidf17/prepared
+# Датасет расположен[ по ссылке](https://kaggle.com/datasets/a5ccfd43e9f96c973b382c2830c3666fddcff6ea003b88976eb7495a6b2c980e)
 
 ## Использование
 
