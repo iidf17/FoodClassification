@@ -7,13 +7,11 @@ from Classifier_pretrained import Classifier, NUM_CLASSES, CLASSES_LIST
 
 app = Flask(__name__)
 
-# Загрузка модели
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = Classifier(NUM_CLASSES).to(device)
 model.load_state_dict(torch.load('Models/best_model.pth', map_location=device))
 model.eval()
 
-# Преобразование для изображения
 transform = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
@@ -21,9 +19,11 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
